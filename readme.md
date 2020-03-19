@@ -1,4 +1,4 @@
-<h1> **Project 1. Toad in the box-a mario party game.**</h1>
+<h1> **Project 1. Toad in the box-a mario party based game.**</h1>
 <br>
 <em>option use star wars characters instead of Mario. </em>
 <br>
