@@ -22,35 +22,55 @@ console.log("itza me mario");
 
 const application = {  
     //showing: 
-      cubeCharacters: ["Bowser", "Toad", "Shell", "Boo"], 
+    cubeCharacters: ["Bowser", "Toad", "Shell", "Boo"], 
     jumpSuccess: true, 
-    gameCharacters: ["Mario", "Peach", "Walugi", "Diddy-Kong" ] 
+    gameCharacters: ["Mario", "Peach", "Walugi", "Diddy-Kong" ] ,
+
+
 
     // f(){
         // use setInterval to log each element in the array after a certain amount of time, 
         // and cycle back to beginning
-        // toad, bowser, ghost, shell, toad, bowser, ghost, shell....
+        // print "Bowser", "Toad", "Shell", "Boo", "Bowser", "Toad", "Shell", "Boo", "Bowser", "Toad", "Shell", "Boo"....
     //}
 
+  
+        function cubeTime (){
+            setInterval(function() {
+                console.log(this.application.cubeCharacters)
+             },3000;
+        }
 
-    displayCubeCharacters: function (cubeCharacters) {
+ 
 
-        cubeCharacters = setInterval(threeSecond, 3000);
+      
+
+    
+
+
+        //let arrayCharacterCube =["Bowser", "Toad", "Shell", "Boo"];
+
+
+        // use this to access other properties and methods in the applicatio
+
+
+    
+        //setInterval
+
+
+
+
 
     }
 
-    threeSecond: function (){
-        console.log(test)
-    }
-displayCubeCharacters(); 
 
-}
+
 
 
 
  
 
-//function blockspins
+
 
 
 
