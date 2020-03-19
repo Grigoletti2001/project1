@@ -33,9 +33,17 @@ const application = {
     //}
 
 
+    displayCubeCharacters: function (cubeCharacters) {
 
+        cubeCharacters = setInterval(threeSecond, 3000);
 
-    
+    }
+
+    threeSecond: function (){
+        console.log(test)
+    }
+displayCubeCharacters(); 
+
 }
 
 
