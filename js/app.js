@@ -1,24 +1,6 @@
 console.log("itza me mario");
 
-// class game 
-// class Game {
 
-
-//     constructor (player1, player2, player3, player4,box1, box2, box3, box4, box5)  {
-
-//         this.player1 = player1 ;
-//         this.player2 = player2 ; 
-//         this.player3 = player3 ; 
-//         this.player4 = player4 ; 
-//         this.box1 = box1; 
-//         this.box2 = box2; 
-
-
-
-//     }
-
-
-// }
 
 const application = {  
     //showing: 
@@ -28,51 +10,27 @@ const application = {
 
 
 
-    // f(){
-        // use setInterval to log each element in the array after a certain amount of time, 
-        // and cycle back to beginning
-        // print "Bowser", "Toad", "Shell", "Boo", "Bowser", "Toad", "Shell", "Boo", "Bowser", "Toad", "Shell", "Boo"....
-    //}
 
-  
-        function cubeTime (){
-            setInterval(function() {
-                console.log(this.application.cubeCharacters)
-             },3000;
-        }
+    function displayNextImage() {
+        x = (x === images.length - 1) ? 0 : x + 1;
+document.getElementById("img").src = images[x];
+          }
 
- 
+function displayPreviousImage() {
+    x = (x <= 0) ? images.length - 1 : x - 1;
+    document.getElementById("img").src = images[x];
+}
 
-      
+function startTimer() {
+    setInterval(displayNextImage, 3000);
+}
 
-    
-
-
-        //let arrayCharacterCube =["Bowser", "Toad", "Shell", "Boo"];
-
-
-        // use this to access other properties and methods in the applicatio
+let images = application.cubeCharacters;
+images[0] = "assets/characters/image1.png";
+images[1] = "assets/characters/image2.png";
+images[2] = "assets/characters/image3.png";
+images[3] = "assets/characters/image4.png";
 
 
-    
-        //setInterval
-
-
-
-
-
-    }
-
-
-
-
-
-
- 
-
-
-
-
-
-
+}
 
