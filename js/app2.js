@@ -71,10 +71,10 @@ const application = {
 document.body.addEventListener("keydown",event => {
   console.log(event);
   if (event.code==="KeyA") {
-
+    console.log(application.currentImage.cubeCharacters)
   }
     if (event.code === "KeyL") {
-
+        console.log(application.currentImage.cubeCharacters2)
     }
 
 
