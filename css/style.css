@@ -11,31 +11,14 @@ body {
     
 }
 
-.container {
-  display: flex;   
-    justify-content: space-between; 
 
     
-}
 
-div.divCubeCharacter {
-  width: 100px;
-  height: 200px;
+.flex-container {
+  display: flex; 
+   flex-direction: row;
 
-}
 
-.divCubeCharacter2 {
-
-  
 }
 
 
-.divCubeCharacter3 {
-
-  
-}
-
-.divCubeCharacter4 {
-
-  
-}
