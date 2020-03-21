@@ -67,6 +67,19 @@ const application = {
         }
     }
 }
+
+document.body.addEventListener("keydown",event => {
+  console.log(event);
+  if (event.code==="KeyA") {
+
+  }
+    if (event.code === "KeyL") {
+
+    }
+
+
+});
+
 // Display the cube character
 application.cubeTime( );
 application.cubeTime2();
