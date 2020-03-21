@@ -1,11 +1,11 @@
 body {
 
     background-color: #FFF8E7;
-     background-image: url('http://images6.fanpop.com/image/photos/37900000/Mario-Party-DS-Background-mario-37968276-1280-1024.jpg'), url("https://i.pinimg.com/originals/31/0d/4a/310d4a2f36b4fe4a07a31f5f7759a4d3.jpg");
+     background-image:  url("https://i.pinimg.com/originals/31/0d/4a/310d4a2f36b4fe4a07a31f5f7759a4d3.jpg");
     background-size: cover; 
      height: 500px; 
   background-position: center; /* Center the image */
-  background-repeat: no-repeat, repeat;  /* Do not repeat the image */
+  background-repeat: repeat;  /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 
     
