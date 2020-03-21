@@ -2,7 +2,7 @@ console.log("itza me mario");
 
 const application = {
     //showing: 
-    cubeCharacters: ["Bowser", "Toad", "Shell", "Boo"],
+    cubeCharacters:  ["Bowser", "Toad", "Shell", "Boo"],
     cubeCharacters2: ["Bowser", "Toad", "Shell", "Boo"],
     cubeCharacters3: ["Bowser", "Toad", "Shell", "Boo"],
     cubeCharacters4: ["Bowser", "Toad", "Shell", "Boo"],
@@ -22,7 +22,7 @@ const application = {
         }, 1000);
     },
 
-    cubeTime: function () {
+    cubeTime2: function () {
         setInterval(function () {
             console.log(application.cubeCharacters2[application.currentImage.index]);
             document.getElementById('divCubeCharacter2').innerHTML = `<img src="${application.cubeImages[application.currentImage.index]
@@ -34,7 +34,7 @@ const application = {
     },
 
 
-    cubeTime: function () {
+    cubeTime3: function () {
         setInterval(function () {
             console.log(application.cubeCharacters3[application.currentImage.index]);
             document.getElementById('divCubeCharacter3').innerHTML = `<img src="${application.cubeImages[application.currentImage.index]
@@ -45,7 +45,7 @@ const application = {
         }, 1000);
     },
 
-    cubeTime: function () {
+    cubeTime4: function () {
         setInterval(function () {
             console.log(application.cubeCharacters3[application.currentImage.index]);
             document.getElementById('divCubeCharacter4').innerHTML = `<img src="${application.cubeImages[application.currentImage.index]
@@ -68,6 +68,12 @@ const application = {
 }
 // Display the cube character
 application.cubeTime( );
+application.cubeTime2();
+application.cubeTime3();
+application.cubeTime4();
+
+
+
 
 // Display the game character
 application.displayGameCharacter();
