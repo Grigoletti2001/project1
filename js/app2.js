@@ -2,15 +2,16 @@ console.log("itza me mario");
 
 const application = {
     //showing: 
-    cubeCharacters:  ["Bowser", "Toad", "Shell", "Boo"],
+    cubeCharacters: ["Bowser", "Toad", "Shell", "Boo"],
     cubeCharacters2: ["Bowser", "Toad", "Shell", "Boo"],
     cubeCharacters3: ["Bowser", "Toad", "Shell", "Boo"],
     cubeCharacters4: ["Bowser", "Toad", "Shell", "Boo"],
     jumpSuccess: true,
     gameCharacters: ["Mario", "Peach", "Walugi", "Diddy-Kong"],
+    gameScore: [0, 0, 0, 0],
     cubeImages: ["assets/characters/image1.png", "assets/characters/image2.png", "assets/characters/image3.png", "assets/characters/image4.png"],
     gameImages: ["assets/characters/player1.png", "assets/characters/player2.png", "assets/characters/player3.png", "assets/characters/player4.png"],
-    currentImage: { index1:0, index2:1, index3:2, index4:3, },
+    currentImage: { index1: 0, index2: 1, index3: 2, index4: 3, },
 
     cubeTime: function () {
         setInterval(function () {
@@ -67,21 +68,55 @@ const application = {
         }
     }
 }
+//score keeping. which characters are above mario. 
+document.body.addEventListener("keydown", event => {
+    console.log(event);
+    if (event.code === "KeyA") {
+        // application.currentImage.index1 0,1,2,3 
+        if (application.currentImage.index1 == 1) {
+            // Toad is over Mario 
+            application.gameScore[0] += 1;
 
-document.body.addEventListener("keydown",event => {
-  console.log(event);
-  if (event.code==="KeyA") {
-    console.log(application.currentImage.cubeCharacters)
-  }
-    if (event.code === "KeyL") {
-        console.log(application.currentImage.cubeCharacters2)
+            if (application.gameScore[0] == 5) {
+                // Mario Wins
+                window.alert("Mario Wins");
+            }
+
+
+        }
+        else {
+            // Toad is not Mario
+        }
+
+
+
     }
+    if (event.code === "KeyL") {
+        if (application.currentImage.index2 == 1) {
+            // Toad is over Peach
+            application.gameScore[1] += 1;
+
+            if (application.gameScore[1] == 5) {
+                // Princess Wins
+                window.alert("Princess Wins");
+            }
+
+        }
+        else {
+            // Toad is not over Peacch
+        }
+    }
+
+
+
 
 
 });
 
+
+
 // Display the cube character
-application.cubeTime( );
+application.cubeTime();
 application.cubeTime2();
 application.cubeTime3();
 application.cubeTime4();
