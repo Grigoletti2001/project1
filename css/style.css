@@ -16,15 +16,22 @@ body {
 
 .flex-container {
   display: flex; 
-   flex-direction: row;
-
 
 }
 
 
-.flex-container2 {
-   display: flex; 
-   justify-content: flex-end;
-   color: white; 
-   
+
+ol {
+  color: #FFF8E7;
+  padding: 20px;
+
 }
+
+
+h3 {
+
+font-size: 20px;
+color: #FFF8E7;
+
+
+} 
