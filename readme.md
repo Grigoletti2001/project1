@@ -5,7 +5,7 @@
 -https://youtu.be/yJ6YPXlyTWY 
 <p>
 <h3> User Story: </h3>
-This game application is a race between 4 players (1 human vs 3 AI) to hit the "toad" picture on an incrementally faster roating box featuring various mario characters. 
+This game application is a race between 4 players (4 humans) to hit the "toad" picture on an incrementally faster roating box featuring various mario characters. 
 <p>
   
 **Requirements**
@@ -23,11 +23,21 @@ This game application is a race between 4 players (1 human vs 3 AI) to hit the "
 <br>
 - include a play again/restart button
 <p>
+  
+ **Controls** 
+ a = mario 
+
+f=Peach
+
+j = Walugi 
+
+l = diddy kong 
+
+**Instructions**
 
 **Extras**
--include a human player 2 option 
-<br>
--include sound effects. 
+3D box
+AI COMPUTER 
 
 
 
