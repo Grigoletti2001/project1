@@ -1,37 +1,37 @@
 body {
-
-    background-color: #FFF8E7;
-     background-image:  url("https://i.pinimg.com/originals/31/0d/4a/310d4a2f36b4fe4a07a31f5f7759a4d3.jpg");
-    background-size: cover; 
-     height: 500px; 
-  background-position: center; /* Center the image */
-  background-repeat: repeat;  /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-
-    
+ 
+   background-color: #FFF8E7;
+    background-image:  url("https://i.pinimg.com/originals/31/0d/4a/310d4a2f36b4fe4a07a31f5f7759a4d3.jpg");
+   background-size: cover;
+    height: 500px;
+ background-position: center; /* Center the image */
+ background-repeat: repeat;  /* Do not repeat the image */
+ background-size: cover; /* Resize the background image to cover the entire container */
+ 
+  
 }
-
-
-    
-
+ 
+ 
+  
+ 
 .flex-container {
-  display: flex; 
-
+ display: flex;
+ 
 }
-
-
-
+ 
+ 
+ 
 ol {
-  color: #FFF8E7;
-  padding: 20px;
-
+ color: #FFF8E7;
+ padding: 20px;
+ 
 }
-
-
+ 
+ 
 h3 {
-
+ 
 font-size: 20px;
 color: #FFF8E7;
-
-
-} 
+ 
+ 
+}
