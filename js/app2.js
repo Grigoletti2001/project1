@@ -1,7 +1,7 @@
 console.log("itza me mario");
 
 const application = {
-    //showing: 
+    //showing:
     cubeCharacters: ["Bowser", "Toad", "Shell", "Boo"],
     cubeCharacters2: ["Bowser", "Toad", "Shell", "Boo"],
     cubeCharacters3: ["Bowser", "Toad", "Shell", "Boo"],
@@ -11,8 +11,12 @@ const application = {
     gameScore: [0, 0, 0, 0],
     cubeImages: ["assets/characters/image1.png", "assets/characters/image2.png", "assets/characters/image3.png", "assets/characters/image4.png"],
     gameImages: ["assets/characters/player1.png", "assets/characters/player2.png", "assets/characters/player3.png", "assets/characters/player4.png"],
-    currentImage: { index1: 0, index2: 1, index3: 2, index4: 3, },
-
+    currentImage: {
+        index1: 0,
+        index2: 1,
+        index3: 2,
+        index4: 3,
+    },
     cubeTime: function () {
         setInterval(function () {
             //console.log(application.cubeCharacters[application.currentImage.index1]);
@@ -23,7 +27,6 @@ const application = {
                 application.currentImage.index1 = 0;
         }, 1000);
     },
-
     cubeTime2: function () {
         setInterval(function () {
             //console.log(application.cubeCharacters2[application.currentImage.index2]);
@@ -34,8 +37,6 @@ const application = {
                 application.currentImage.index2 = 0;
         }, 1000);
     },
-
-
     cubeTime3: function () {
         setInterval(function () {
             //console.log(application.cubeCharacters3[application.currentImage.index3]);
@@ -46,7 +47,6 @@ const application = {
                 application.currentImage.index3 = 0;
         }, 1000);
     },
-
     cubeTime4: function () {
         setInterval(function () {
             //console.log(application.cubeCharacters3[application.currentImage.index4]);
@@ -57,10 +57,6 @@ const application = {
                 application.currentImage.index4 = 0;
         }, 1000);
     },
-
-
-
-
     displayGameCharacter: function () {
         for (let i = 0; i < application.gameCharacters.length; i++) {
             //console.log(application.gameCharacters[i]);
@@ -68,31 +64,23 @@ const application = {
         }
     }
 }
-//score keeping. which characters are above mario. 
+//score keeping. which characters are above mario.
 document.body.addEventListener("keydown", event => {
     console.log(event);
     if (event.code === "KeyA") {
-        // application.currentImage.index1 0,1,2,3 
+        // application.currentImage.index1 0,1,2,3
         if (application.currentImage.index1 == 1) {
-            // Toad is over Mario 
+            // Toad is over Mario
             application.gameScore[0] += 1;
 
             if (application.gameScore[0] == 5) {
                 // Mario Wins
                 window.alert("Mario Wins");
             }
-
-
+        } else if (application.currentImage.index1 !== 1) {
+            application.gameScore[0] += 0;
         }
-        else {
-            (application.currentImage.index1 !==1) {
-                application.gameScore[0]+= 0;
-            }
-            // Toad is not equal to Mario (in terms ofbox rotation. )
-        }
-
-
-
+        // Toad is not equal to Mario (in terms ofbox rotation. )
     }
     if (event.code === "KeyL") {
         if (application.currentImage.index2 == 1) {
@@ -103,33 +91,17 @@ document.body.addEventListener("keydown", event => {
                 // Princess Peach Wins
                 window.alert("Princess Wins");
             }
-
-        }
-        else {
+        } else if (application.currentImage.index2 !== 1) {
             // Toad is not over Peacch
-                (application.currentImage.index2 !==1) {
-                    application.gameScore[1]+=0; 
-                }
+            application.gameScore[1] += 0;
         }
     }
-    
-
-
-
-
-
 });
-
-
 
 // Display the cube character
 application.cubeTime();
 application.cubeTime2();
 application.cubeTime3();
 application.cubeTime4();
-
-
-
-
 // Display the game character
 application.displayGameCharacter();
