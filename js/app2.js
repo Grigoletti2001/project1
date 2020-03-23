@@ -85,7 +85,10 @@ document.body.addEventListener("keydown", event => {
 
         }
         else {
-            // Toad is not Mario
+            (application.currentImage.index1 !==1) {
+                application.gameScore[0]+= 0;
+            }
+            // Toad is not equal to Mario (in terms ofbox rotation. )
         }
 
 
@@ -97,15 +100,19 @@ document.body.addEventListener("keydown", event => {
             application.gameScore[1] += 1;
 
             if (application.gameScore[1] == 5) {
-                // Princess Wins
+                // Princess Peach Wins
                 window.alert("Princess Wins");
             }
 
         }
         else {
             // Toad is not over Peacch
+                (application.currentImage.index2 !==1) {
+                    application.gameScore[1]+=0; 
+                }
         }
     }
+    
 
 
 
