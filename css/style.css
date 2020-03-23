@@ -22,3 +22,9 @@ body {
 }
 
 
+.flex-container2 {
+   display: flex; 
+   justify-content: flex-end;
+   color: white; 
+   
+}
