@@ -16,8 +16,6 @@
     let cubeSideNames = ['Bowser', 'Toad', 'Shell', 'Boo'];
     let playerNames = ['Mario', 'Peach', 'Walugi', 'Diddy-Kong'];
 
-    const numOfCubes = 4;
-    let jumpSuccess = true;
     let players = [];
     for (let i = 0; i < playerNames.length; i++) {
         players.push({
@@ -27,13 +25,8 @@
         });
     }
 
-    // random image indexes
-    // for (let i = 0; i < numOfCubes; i++) {
-    // 	curImgIdx.push(Math.round(Math.random() * cubeImages.length));
-    // }
-
     // start cubes
-    for (let i = 0; i < numOfCubes; i++) {
+    for (let i = 0; i < players.length; i++) {
         setInterval(function () {
             // increment the curImgIdx for this cube
             players[i].cubeSide++;
@@ -56,7 +49,8 @@
     function stopCube(player) {
         log(player.name + ' stopped cube at ' +
             player.cubeSide + ' ' + cubeSideNames[player.cubeSide]);
-        // currentImage.index1 0,1,2,3
+
+        // Toad is cube side 1
         if (player.cubeSide == 1) {
             // Toad is over Mario
             player.score += 1;
@@ -72,13 +66,15 @@
 
     function updateScores() {
         for (let i = 0; i < players.length; i++) {
-            log(player.name + "'s score: " + player.score);
+            let player = players[i];
+            document.getElementById('player' + i + 'Score').innerHTML =
+                player.name + "'s score: " + player.score;
         }
     }
 
     // score keeping. which characters are above mario.
     document.body.addEventListener("keydown", event => {
-        console.log(event);
+
         if (event.key == 'a') {
             stopCube(players[0]);
         } else if (event.key == 'f') {
