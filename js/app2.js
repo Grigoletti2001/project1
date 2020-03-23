@@ -28,7 +28,7 @@
     // start cubes
     for (let i = 0; i < players.length; i++) {
         setInterval(function () {
-            // increment the curImgIdx for this cube
+            // increment the cub side for the player's cube
             players[i].cubeSide++;
             // set back to zero if it goes above the images length
             if (players[i].cubeSide >= cubeImages.length) {
@@ -37,7 +37,7 @@
             // replace cube image with the new cube side img
             document.getElementById('cube' + i).innerHTML = `<img src="${cubeImages[players[i].cubeSide]
                 }" style="width: 300px; " />`;
-        }, 1000);
+        }, 1000); // one second in milliseconds
     }
 
     // add player character images
@@ -52,15 +52,17 @@
 
         // Toad is cube side 1
         if (player.cubeSide == 1) {
-            // Toad is over Mario
+            // if the player stopped at Toad they get a point
+            // added to their score
             player.score += 1;
 
+            // if the player gets 5 points they win!
             if (player.score == 5) {
-                // Mario Wins
                 window.alert(player.name + ' Wins!');
             }
         } else {
-            player.score += 0;
+            // subtract one from their score if they don't get Toad
+            player.score -= 1;
         }
     }
 
