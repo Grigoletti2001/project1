@@ -1,54 +1,35 @@
-// anonymous function calls itself
-(function () {
-    // shortcut for console.log
-    const log = console.log;
-    log("itza me mario");
-
-    let cubeImages = [];
-    for (let i = 0; i < 4; i++) {
-        cubeImages.push(`assets/characters/image${i + 1}.png`);
-    }
-    let gameImages = [];
-    for (let i = 0; i < 4; i++) {
-        gameImages.push(`assets/characters/player${i + 1}.png`);
+class Game {
+    constructor(players, cubeImages, gameImages, cubeSideNames, playerNames) {
+        this.players = [];
+        this.cubeImages = [];
+        this.gameImages = [];
+        this.cubeSideNames = ['Bowser', 'Toad', 'Shell', 'Boo'];
+        this.playerNames = ['Mario', 'Peach', 'Walugi', 'Diddy-Kong'];
     }
 
-    let cubeSideNames = ['Bowser', 'Toad', 'Shell', 'Boo'];
-    let playerNames = ['Mario', 'Peach', 'Walugi', 'Diddy-Kong'];
-
-    let players = [];
-    for (let i = 0; i < playerNames.length; i++) {
-        players.push({
-            name: playerNames[i],
-            score: 0,
-            cubeSide: i
-        });
+    renderCubeImages(length = 4) {
+        for (let i = 0; i < length; i++) {
+            this.cubeImages.push(`assets/characters/image${i + 1}.png`);
+        }
     }
 
-    // start cubes
-    for (let i = 0; i < players.length; i++) {
-        setInterval(function () {
-            // increment the cub side for the player's cube
-            players[i].cubeSide++;
-            // set back to zero if it goes above the images length
-            if (players[i].cubeSide >= cubeImages.length) {
-                players[i].cubeSide = 0;
-            }
-            // replace cube image with the new cube side img
-            document.getElementById('cube' + i).innerHTML = `<img src="${cubeImages[players[i].cubeSide]
-                }" style="width: 300px; " />`;
-        }, 1000); // one second in milliseconds
+    renderGameImages(length = 4) {
+        for (let i = 0; i < length; i++) {
+            this.gameImages.push(`assets/characters/player${i + 1}.png`);
+        }
     }
 
-    // add player character images
-    for (let i = 0; i < players.length; i++) {
-        //console.log(gameCharacters[i]);
-        document.getElementById('players').innerHTML += `<img src="${gameImages[i]}" style="float:left; margin-right: 2%;width: 300px;" />`;
+    updateScores() {
+        for (let i = 0; i < players.length; i++) {
+            let player = players[i];
+            document.getElementById('player' + i + 'Score').innerHTML =
+                player.name + "'s score: " + player.score;
+        }
     }
 
-    function stopCube(player) {
-        log(player.name + ' stopped cube at ' +
-            player.cubeSide + ' ' + cubeSideNames[player.cubeSide]);
+    stopCube(player) {
+        console.log(player.name + ' stopped cube at ' +
+            player.cubeSide + ' ' + this.cubeSideNames[player.cubeSide]);
 
         // Toad is cube side 1
         if (player.cubeSide == 1) {
@@ -66,27 +47,73 @@
         }
     }
 
-    function updateScores() {
-        for (let i = 0; i < players.length; i++) {
-            let player = players[i];
-            document.getElementById('player' + i + 'Score').innerHTML =
-                player.name + "'s score: " + player.score;
+    generatePlayers() {
+        for (let i = 0; i < this.playerNames.length; i++) {
+            this.players.push({
+                name: this.playerNames[i],
+                score: 0,
+                cubeSide: i
+            });
         }
     }
 
-    // score keeping. which characters are above mario.
-    document.body.addEventListener("keydown", event => {
+    startCubes() {
+        let players = this.players;
 
-        if (event.key == 'a') {
-            stopCube(players[0]);
-        } else if (event.key == 'f') {
-            stopCube(players[1]);
-        } else if (event.key == 'j') {
-            stopCube(players[2]);
-        } else if (event.key == 'l') {
-            stopCube(players[3]);
+        for (let i = 0; i < players.length; i++) {
+            setInterval(() => {
+                // increment the cub side for the player's cube
+                players[i].cubeSide++;
+                // set back to zero if it goes above the images length
+                if (players[i].cubeSide >= this.cubeImages.length) {
+                    players[i].cubeSide = 0;
+                }
+                // replace cube image with the new cube side img
+                document.getElementById('cube' + i).innerHTML = `<img src="${this.cubeImages[players[i].cubeSide]
+                    }" style="width: 300px; " />`;
+            }, 1000); // one second in milliseconds
         }
-        updateScores();
-    });
 
-})();
+    }
+
+    addPlayers() {
+        for (let i = 0; i < this.players.length; i++) {
+            //console.log(gameCharacters[i]);
+            document.getElementById('players').innerHTML += `<img src="${this.gameImages[i]}" style="float:left; margin-right: 2%;width: 300px;" />`;
+        }
+    }
+
+    ready() {
+        let players = this.players;
+
+        this.renderCubeImages();
+        this.renderGameImages();
+
+        // generate players
+        this.generatePlayers();
+
+        // start cubes
+        this.startCubes();
+
+        // add player character images
+        this.addPlayers();
+
+        // score keeping. which characters are above mario.
+        document.body.addEventListener("keydown", event => {
+            if (event.key == 'a') {
+                this.stopCube(players[0]);
+            } else if (event.key == 'f') {
+                this.stopCube(players[1]);
+            } else if (event.key == 'j') {
+                this.stopCube(players[2]);
+            } else if (event.key == 'l') {
+                this.stopCube(players[3]);
+            }
+
+            this.updateScores();
+        });
+    }
+}
+
+const game = new Game();
+game.ready();
